@@ -11,6 +11,6 @@ public class CardNumberGenerator {
     }
 
     public String getInvalidCardNumber() {
-        return "1111111111111111";
+        return "0000000000000000";
     }
 }

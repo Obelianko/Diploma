@@ -10,13 +10,23 @@ public class TourOfferPage {
     private final SelenideElement byCardButton = $(byText("Купить"));
     private final SelenideElement onCreditButton = $(byText("Купить в кредит"));
 
-    public TourOfferPage payByCard() {
+    public PayByCardPage payByCard() {
         byCardButton.click();
         return new PayByCardPage();
     }
 
-    public TourOfferPage buyOnCredit() {
+    public PayByCreditCardPage buyOnCredit() {
         onCreditButton.click();
         return new PayByCreditCardPage();
     }
+
+//    public TourOfferPage payByCard() {
+//        byCardButton.click();
+//        return new PayByCardPage();
+//    }
+//
+//    public TourOfferPage buyOnCredit() {
+//        onCreditButton.click();
+//        return new PayByCreditCardPage();
+//    }
 }

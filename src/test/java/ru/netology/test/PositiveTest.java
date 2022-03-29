@@ -33,7 +33,7 @@ public class PositiveTest {
     @Test
     public void shouldConfirmPaymentWithApprovedCard() {
         var tourOfferPage = new TourOfferPage();
-        var payByCard = new PayByCardPage();
+        var payByCard = tourOfferPage.payByCard();
         var approvedCardInformation = DataHelper.getValidCardInformation();
         tourOfferPage.payByCard();
         payByCard.enterPayCardData(approvedCardInformation);
@@ -48,7 +48,7 @@ public class PositiveTest {
     @Test
     public void shouldConfirmBuyingOnCreditWithApprovedCard() {
         var tourOfferPage = new TourOfferPage();
-        var payByCreditCard = new PayByCreditCardPage();
+        var payByCreditCard = tourOfferPage.buyOnCredit();
         var approvedCardInformation = DataHelper.getValidCardInformation();
         tourOfferPage.buyOnCredit();
         payByCreditCard.enterCreditCardData(approvedCardInformation);
@@ -58,4 +58,53 @@ public class PositiveTest {
         var statusForPayment = SqlUtils.getStatusForCredit(paymentId);
         Assertions.assertEquals("APPROVED", statusForPayment);
     }
+
+    @DisplayName("3 By card that expires in the current month and year.")
+    @Test
+    public void shouldConfirmPaymentWithCurrentMonthAndYear() {
+        var tourOfferPage = new TourOfferPage();
+        var payByCard = tourOfferPage.payByCard();
+        var validCardInformation = DataHelper.getCardInformationWithCurrentMonthAndYear();
+        tourOfferPage.payByCard();
+        payByCard.enterPayCardData(validCardInformation);
+        payByCard.successfulPayCardPayment();
+
+    }
+
+    @DisplayName("4 By credit with credit card that expires in the current month and year")
+    @Test
+    public void shouldConfirmBuyingOnCreditWithCurrentMonthAndYear() {
+        var tourOfferPage = new TourOfferPage();
+        var payByCreditCard = tourOfferPage.buyOnCredit();
+        var validCardInformation = DataHelper.getCardInformationWithCurrentMonthAndYear();
+        tourOfferPage.buyOnCredit();
+        payByCreditCard.enterCreditCardData(validCardInformation);
+        payByCreditCard.successfulCreditCardPayment();
+
+    }
+
+    @DisplayName("5 By card that expires next month")
+    @Test
+    public void shouldConfirmPaymentWithNextMonthCard() {
+        var tourOfferPage = new TourOfferPage();
+        var payByCard = tourOfferPage.payByCard();
+        var validCardInformation = DataHelper.getCardInformationWithNextMonth();
+        tourOfferPage.payByCard();
+        payByCard.enterPayCardData(validCardInformation);
+        payByCard.successfulPayCardPayment();
+
+    }
+
+    @DisplayName("6 By Credit with card that expires next month.")
+    @Test
+    public void shouldConfirmBuyingOnCreditWithNextMonthCard() {
+        var tourOfferPage = new TourOfferPage();
+        var payByCreditCard = tourOfferPage.buyOnCredit();
+        var validCardInformation = DataHelper.getCardInformationWithNextMonth();
+        tourOfferPage.buyOnCredit();
+        payByCreditCard.enterCreditCardData(validCardInformation);
+        payByCreditCard.successfulCreditCardPayment();
+
+    }
+
 }

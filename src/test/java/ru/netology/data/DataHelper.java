@@ -7,6 +7,7 @@ import java.util.Locale;
 
 public class DataHelper {
     static Faker enOption = new Faker(new Locale("en"));
+    static Faker faker = new Faker(new Locale("ru"));
     static DateGenerator dateGenerator = new DateGenerator();
     static CardNumberGenerator cardNumberGenerator = new CardNumberGenerator();
 
@@ -24,7 +25,7 @@ public class DataHelper {
                 " ",
                 dateGenerator.shiftYear(5).getYear(),
                 dateGenerator.shiftMonth(2).getMonth(),
-                "Olga Belianko",
+                enOption.name().fullName(),
                 Integer.toString(enOption.number().numberBetween(100, 999)));
     }
 
@@ -33,7 +34,7 @@ public class DataHelper {
                 cardNumberGenerator.getApprovedCardNumber(),
                 " ",
                 dateGenerator.shiftMonth(2).getMonth(),
-                "Olga Belianko",
+                enOption.name().fullName(),
                 Integer.toString(enOption.number().numberBetween(100, 999)));
     }
 
@@ -42,7 +43,7 @@ public class DataHelper {
                 cardNumberGenerator.getApprovedCardNumber(),
                 dateGenerator.shiftYear(5).getYear(),
                 " ",
-                "Olga Belianko",
+                enOption.name().fullName(),
                 Integer.toString(enOption.number().numberBetween(100, 999)));
     }
 
@@ -60,7 +61,7 @@ public class DataHelper {
                 cardNumberGenerator.getApprovedCardNumber(),
                 dateGenerator.shiftYear(5).getYear(),
                 dateGenerator.shiftMonth(2).getMonth(),
-                "Olga Belianko",
+                enOption.name().fullName(),
                 "");
     }
 
@@ -69,7 +70,7 @@ public class DataHelper {
                 cardNumberGenerator.getApprovedCardNumber(),
                 dateGenerator.shiftYear(5).getYear(),
                 dateGenerator.shiftMonth(2).getMonth(),
-                enOption.harryPotter().character(),
+                enOption.name().fullName(),
                 Integer.toString(enOption.number().numberBetween(100, 999)));
     }
 
@@ -78,8 +79,8 @@ public class DataHelper {
                 cardNumberGenerator.getInvalidCardNumber(),
                 dateGenerator.shiftYear(5).getYear(),
                 dateGenerator.shiftMonth(2).getMonth(),
-                "Olga Belianko",
-                Integer.toString(enOption.number().numberBetween(0, 999)));
+                enOption.name().fullName(),
+                Integer.toString(enOption.number().numberBetween(100, 999)));
     }
 
     public static CardInformation getDeclinedCardInformation() {
@@ -87,7 +88,7 @@ public class DataHelper {
                 cardNumberGenerator.getDeclinedCardNumber(),
                 dateGenerator.shiftYear(5).getYear(),
                 dateGenerator.shiftMonth(2).getMonth(),
-                "Olga Belianko",
+                enOption.name().fullName(),
                 Integer.toString(enOption.number().numberBetween(100, 999)));
     }
 
@@ -96,7 +97,7 @@ public class DataHelper {
                 cardNumberGenerator.getApprovedCardNumber(),
                 dateGenerator.shiftYear(-2).getYear(),
                 dateGenerator.shiftMonth(0).getMonth(),
-                "Olga Belianko",
+                enOption.name().fullName(),
                 Integer.toString(enOption.number().numberBetween(100, 999)));
     }
 
@@ -104,7 +105,7 @@ public class DataHelper {
         return new CardInformation(cardNumberGenerator.getApprovedCardNumber(),
                 dateGenerator.shiftYear(0).getYear(),
                 dateGenerator.shiftMonth(-1).getMonth(),
-                "Olga Belianko",
+                enOption.name().fullName(),
                 Integer.toString(enOption.number().numberBetween(100, 999)));
     }
 
@@ -112,7 +113,7 @@ public class DataHelper {
         return new CardInformation(cardNumberGenerator.getApprovedCardNumber(),
                 dateGenerator.shiftYear(0).getYear(),
                 dateGenerator.shiftMonth(0).getMonth(),
-                "Olga Belianko",
+                enOption.lordOfTheRings().character(),
                 Integer.toString(enOption.number().numberBetween(100, 999)));
     }
 
@@ -120,24 +121,31 @@ public class DataHelper {
         return new CardInformation(cardNumberGenerator.getApprovedCardNumber(),
                 dateGenerator.shiftYear(0).getYear(),
                 dateGenerator.shiftMonth(1).getMonth(),
-                "Olga Belianko",
+                enOption.lordOfTheRings().character(),
                 Integer.toString(enOption.number().numberBetween(100, 999)));
     }
 
-    public static CardInformation getCardInformationWithZeroMonthAndYear() {
+    public static CardInformation getCardInformationWithZeroMonth() {
+        return new CardInformation(cardNumberGenerator.getApprovedCardNumber(),
+                "27",
+                "00",
+                enOption.name().fullName(),
+                Integer.toString(enOption.number().numberBetween(100, 999)));
+    }
+
+    public static CardInformation getCardInformationWithZeroYear() {
         return new CardInformation(cardNumberGenerator.getApprovedCardNumber(),
                 "00",
-                "00",
-                "Olga Belianko",
+                "01",
+                enOption.name().fullName(),
                 Integer.toString(enOption.number().numberBetween(100, 999)));
     }
-
     public static CardInformation getCardInformationWithWrongFormatDate() {
         return new CardInformation(
                 cardNumberGenerator.getApprovedCardNumber(),
                 dateGenerator.wrongYear().getYear(),
                 dateGenerator.wrongMonth().getMonth(),
-                "Olga Belianko",
+                enOption.lordOfTheRings().character(),
                 Integer.toString(enOption.number().numberBetween(100, 999)));
     }
 
@@ -146,7 +154,7 @@ public class DataHelper {
                 cardNumberGenerator.getApprovedCardNumber(),
                 dateGenerator.shiftYear(5).getYear(),
                 dateGenerator.shiftMonth(2).getMonth(),
-                "Ольга Белянко",
+                faker.name().fullName(),
                 Integer.toString(enOption.number().numberBetween(100, 999)));
     }
 
@@ -174,7 +182,7 @@ public class DataHelper {
                 cardNumberGenerator.getApprovedCardNumber(),
                 dateGenerator.shiftYear(5).getYear(),
                 dateGenerator.shiftMonth(2).getMonth(),
-                "Olga Belianko",
+                enOption.lordOfTheRings().character(),
                 "000");
     }
 
@@ -183,7 +191,7 @@ public class DataHelper {
                 cardNumberGenerator.getApprovedCardNumber(),
                 dateGenerator.shiftYear(5).getYear(),
                 dateGenerator.shiftMonth(2).getMonth(),
-                "Olga Belianko",
+                enOption.lordOfTheRings().character(),
                 "ghghgh");
     }
 

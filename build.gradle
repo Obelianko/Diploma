@@ -29,13 +29,13 @@ repositories {
 }
 
 dependencies {
-    testImplementation 'org.junit.jupiter:junit-jupiter:5.8.1'
-    testImplementation 'com.codeborne:selenide:6.0.3'
-    testImplementation 'mysql:mysql-connector-java:8.0.25'
-    implementation 'org.postgresql:postgresql:42.2.23.jre7'
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.8.2'
+    testImplementation 'com.codeborne:selenide:6.3.5'
+    testImplementation 'mysql:mysql-connector-java:8.0.28'
+    implementation 'org.postgresql:postgresql:42.3.3'
     testImplementation 'com.github.javafaker:javafaker:1.0.2'
-    testImplementation 'io.qameta.allure:allure-selenide:2.16.1'
-    testRuntimeOnly 'org.slf4j:slf4j-simple:1.7.32'
+    testImplementation 'io.qameta.allure:allure-selenide:2.17.3'
+    testRuntimeOnly 'org.slf4j:slf4j-simple:1.7.36'
 }
 
 test {
