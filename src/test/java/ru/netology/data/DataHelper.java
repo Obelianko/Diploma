@@ -127,7 +127,7 @@ public class DataHelper {
 
     public static CardInformation getCardInformationWithZeroMonth() {
         return new CardInformation(cardNumberGenerator.getApprovedCardNumber(),
-                "27",
+                dateGenerator.shiftYear(0).getYear(),
                 "00",
                 enOption.name().fullName(),
                 Integer.toString(enOption.number().numberBetween(100, 999)));
@@ -136,7 +136,7 @@ public class DataHelper {
     public static CardInformation getCardInformationWithZeroYear() {
         return new CardInformation(cardNumberGenerator.getApprovedCardNumber(),
                 "00",
-                "01",
+                dateGenerator.shiftMonth(0).getMonth(),
                 enOption.name().fullName(),
                 Integer.toString(enOption.number().numberBetween(100, 999)));
     }

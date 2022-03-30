@@ -61,7 +61,7 @@ public class NegativeTest {
         payByCard.invalidPayCardFormat();
     }
 
-    @DisplayName("10 By Credit with Blank card details.")
+    @DisplayName("10 By Credit with Blank card data.")
     @Test
     public void shouldNotConfirmBuyingOnCreditWithEmptyFieldCard() {
         var tourOfferPage = new TourOfferPage();
@@ -388,7 +388,7 @@ public class NegativeTest {
         payByCreditCard.invalidCreditCardFormat();
     }
 
-    @DisplayName("39 By Card Invalid card number.")
+    @DisplayName("39 By Card Invalid card number")
     @Test
     public void shouldNotConfirmedPaymentWithInvalidNumber() {
         var tourOfferPage = new TourOfferPage();

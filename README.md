@@ -1,6 +1,6 @@
 # Автоматизация тестирования формы "Путешествие дня -Марракэш"
 
-## Документация 
+## Документация
 
 - [План автоматизации тестирования](https://github.com/Obelianko/Diploma/blob/2f8259bbe51eb98842de9f08e02e8f6f6690ae41/Plan.md)
 - [Отчет по тестированию](https://github.com/Obelianko/Diploma/blob/2f8259bbe51eb98842de9f08e02e8f6f6690ae41/Report/Report.md)
@@ -15,8 +15,8 @@ sql, postgresql.
 1. Клонировать репозиторий, выполнить команду:git clone https://github.com/Obelianko/Diploma.git
 2. Запуск контейнеров Docker, выполнить команду: docker-compose up
 3. Запуск SUT с поддержкой MySQL: выполнить команду: java "-Dspring.datasource.url=jdbc:mysql://localhost:3306/app" -jar ./artifacts/aqa-shop.jar
-4. Запуск тестов с MySQL, выполнить команду: 
-5. Отчёт Allure, выполнить команду: ./gradlew allureReport 
+4. Запуск тестов с MySQL, выполнить команду: ./gradlew "-Ddb.url=jdbc:mysql://localhost:3306/app" clean test
+5. Отчёт Allure, выполнить команду: ./gradlew allureReport ./gradlew allureServe
 6. Окончание тестов и остановка контейнеров
 
 ### Инструкция по запуску с поддержкой PostgreSQL
@@ -24,7 +24,7 @@ sql, postgresql.
 2. Запуск контейнеров Docker, выполнить команду: docker-compose up
 3. Запуск SUT с поддержкой Postgres, выполнить команду java "-Dspring.datasource.url=jdbc:postgresql://localhost:5432/app" -jar ./artifacts/aqa-shop.jar
 4. Запуск тестов с Postgres, выполнить команду: ./gradlew "-Ddb.url=jdbc:postgresql://localhost:5432/app" clean test
-5. Отчёт Allure, выполнить команду ./gradlew allureReport 
+5. Отчёт Allure, выполнить команду ./gradlew allureReport ./gradlew allureServe
 6. Окончание тестов и остановка контейнеров
 
 
