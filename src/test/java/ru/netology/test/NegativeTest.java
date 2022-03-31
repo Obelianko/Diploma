@@ -242,7 +242,7 @@ public class NegativeTest {
         var invalidCardInformation = DataHelper.getCardInformationWithZeroMonth();
         tourOfferPage.payByCard();
         payByCard.enterPayCardData(invalidCardInformation);
-        payByCard.expiredPayCardYear();
+        payByCard.expiredPayCardMonth();
     }
 
     @DisplayName("26 By credit with card with zeros in month field")
@@ -253,7 +253,7 @@ public class NegativeTest {
         var invalidCardInformation = DataHelper.getCardInformationWithZeroMonth();
         tourOfferPage.buyOnCredit();
         payByCreditCard.enterCreditCardData(invalidCardInformation);
-        payByCreditCard.expiredCreditCardYear();
+        payByCreditCard.expiredCreditCardMonth();
     }
 
     @DisplayName("27 By card with an incorrect date field format")
@@ -396,7 +396,7 @@ public class NegativeTest {
         var invalidCardInformation = DataHelper.getCardInformationWithInvalidNumber();
         tourOfferPage.payByCard();
         payByCard.enterPayCardData(invalidCardInformation);
-        payByCard.notSuccessfulPayCardPayment();
+        payByCard.invalidPayCardFormat();
 
     }
     @DisplayName("40 By Credit invalid card number.")
@@ -407,7 +407,7 @@ public class NegativeTest {
         var invalidCardInformation = DataHelper.getCardInformationWithInvalidNumber();
         tourOfferPage.buyOnCredit();
         payByCreditCard.enterCreditCardData(invalidCardInformation);
-        payByCreditCard.notSuccessfulCreditCardPayment();
+        payByCreditCard.invalidCreditCardFormat();
 
     }
     @DisplayName("41 By card with zero in year field.")

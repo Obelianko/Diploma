@@ -15,7 +15,7 @@ sql, postgresql.
 1. Клонировать репозиторий, выполнить команду:git clone https://github.com/Obelianko/Diploma.git
 2. Запуск контейнеров Docker, выполнить команду: docker-compose up
 3. Запуск SUT с поддержкой MySQL: выполнить команду: java "-Dspring.datasource.url=jdbc:mysql://localhost:3306/app" -jar ./artifacts/aqa-shop.jar
-4. Запуск тестов с MySQL, выполнить команду: ./gradlew "-Ddb.url=jdbc:mysql://localhost:3306/app" clean test
+4. Запуск тестов с MySQL, выполнить команду: 
 5. Отчёт Allure, выполнить команду: ./gradlew allureReport 
 6. Выполнить команду: ./gradlew allureServe
 7. Окончание тестов и остановка контейнеров
